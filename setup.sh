@@ -16,4 +16,6 @@ docker run --rm -it inem0o/redis-trib create --replicas 1 $local_ip:363{79..84}
 yes
 echo "***************************redis-cluster connected***************************"
 
+echo "success"
+
 exit 0
