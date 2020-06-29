@@ -8,7 +8,7 @@ services:
       - "36379:36379"
       - "46379:46379"
     restart: always
-    volumes: ["/redis-cluster/redis-master1:/redis"]
+    volumes: ["./redis-master1:/redis"]
     entrypoint: [redis-server, /redis/redis.conf]
   redis-master2:
     image: redis:5.0
@@ -18,7 +18,7 @@ services:
       - "36380:36380"
       - "46380:46380"
     restart: always
-    volumes: ["/redis-cluster/redis-master2:/redis"]
+    volumes: ["./redis-master2:/redis"]
     entrypoint: [redis-server, /redis/redis.conf]
   redis-master3:
     image: redis:5.0
@@ -28,7 +28,7 @@ services:
       - "36381:36381"
       - "46381:46381"
     restart: always
-    volumes: ["/redis-cluster/redis-master3:/redis"]
+    volumes: ["./redis-master3:/redis"]
     entrypoint: [redis-server, /redis/redis.conf]
   redis-slave1:
     image: redis:5.0
@@ -38,7 +38,7 @@ services:
       - "36382:36382"
       - "46382:46382"
     restart: always
-    volumes: ["/redis-cluster/redis-slave1:/redis"]
+    volumes: ["./redis-slave1:/redis"]
     entrypoint: [redis-server, /redis/redis.conf]
   redis-slave2:
     image: redis:5.0
@@ -48,7 +48,7 @@ services:
       - "36383:36383"
       - "46383:46383"
     restart: always
-    volumes: ["/redis-cluster/redis-slave2:/redis"]
+    volumes: ["./redis-slave2:/redis"]
     entrypoint: [redis-server, /redis/redis.conf]
   redis-slave3:
     image: redis:5.0
@@ -58,5 +58,5 @@ services:
       - "36384:36384"
       - "46384:46384"
     restart: always
-    volumes: ["/redis-cluster/redis-slave3:/redis"]
+    volumes: ["./redis-slave3:/redis"]
     entrypoint: [redis-server, /redis/redis.conf]
