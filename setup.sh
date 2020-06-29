@@ -12,8 +12,7 @@ echo "***************************redis-cluster containers inited****************
 echo "***************************start to connect redis-cluster***************************"
 local_host="`hostname --fqdn`"
 local_ip=`host $local_host 2>/dev/null | awk '{print $NF}'`
-docker run --rm -it inem0o/redis-trib create --replicas 1 $local_ip:363{79..84}
-yes
+echo yes |docker run --rm -i inem0o/redis-trib create --replicas 1 $local_ip:363{79..84}
 echo "***************************redis-cluster connected***************************"
 
 echo "success"
