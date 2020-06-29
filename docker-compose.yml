@@ -1,62 +1,50 @@
 version: "3"
 services:
-  redis-master1:
+  redis-master1: 
     image: redis:5.0
     container_name: redis-master1
     working_dir: /redis
-    ports:
-      - "36379:36379"
-      - "46379:46379"
+    network_mode: host
     restart: always
-    volumes: ["./redis-master1:/redis"]
+    volumes: ["/sdddata/covfefe/dockerdata/redis-cluster/redis-master1:/redis"]
     entrypoint: [redis-server, /redis/redis.conf]
   redis-master2:
     image: redis:5.0
     working_dir: /redis
     container_name: redis-master2
-    ports:
-      - "36380:36380"
-      - "46380:46380"
+    network_mode: host
     restart: always
-    volumes: ["./redis-master2:/redis"]
+    volumes: ["/sdddata/covfefe/dockerdata/redis-cluster/redis-master2:/redis"]
     entrypoint: [redis-server, /redis/redis.conf]
   redis-master3:
     image: redis:5.0
     container_name: redis-master3
     working_dir: /redis
-    ports:
-      - "36381:36381"
-      - "46381:46381"
+    network_mode: host
     restart: always
-    volumes: ["./redis-master3:/redis"]
+    volumes: ["/sdddata/covfefe/dockerdata/redis-cluster/redis-master3:/redis"]
     entrypoint: [redis-server, /redis/redis.conf]
   redis-slave1:
     image: redis:5.0
+    network_mode: host
     container_name: redis-slave1
     working_dir: /redis
-    ports:
-      - "36382:36382"
-      - "46382:46382"
     restart: always
-    volumes: ["./redis-slave1:/redis"]
+    volumes: ["/sdddata/covfefe/dockerdata/redis-cluster/redis-slave1:/redis"]
     entrypoint: [redis-server, /redis/redis.conf]
   redis-slave2:
     image: redis:5.0
     working_dir: /redis
     container_name: redis-slave2
-    ports:
-      - "36383:36383"
-      - "46383:46383"
+    network_mode: host
     restart: always
-    volumes: ["./redis-slave2:/redis"]
+    volumes: ["/sdddata/covfefe/dockerdata/redis-cluster/redis-slave2:/redis"]
     entrypoint: [redis-server, /redis/redis.conf]
   redis-slave3:
     image: redis:5.0
     container_name: redis-slave3
     working_dir: /redis
-    ports:
-      - "36384:36384"
-      - "46384:46384"
+    network_mode: host
     restart: always
-    volumes: ["./redis-slave3:/redis"]
+    volumes: ["/sdddata/covfefe/dockerdata/redis-cluster/redis-slave3:/redis"]
     entrypoint: [redis-server, /redis/redis.conf]
