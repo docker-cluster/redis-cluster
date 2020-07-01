@@ -8,6 +8,16 @@
 
 网络：host
 
+目录结构：
+
+``` bash
+redis-cluster/
+├── docker-compose.yml
+├── README.md
+├── redis.conf
+└── setup.sh
+```
+
 ## 部署
 
 ``` bash
